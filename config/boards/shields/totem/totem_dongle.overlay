@@ -1,18 +1,14 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+#include <dt-bindings/zmk/matrix_transform.h>
 
-#include "totem.dtsi"
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
 
-&kscan0 {
-	col-gpios
-		= <&pro_micro 21 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 20 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 19 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 18 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 15 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 14 GPIO_ACTIVE_HIGH>
-		;
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
 };
